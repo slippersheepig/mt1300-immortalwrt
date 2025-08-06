@@ -13,5 +13,9 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 
-#替换sing-box的默认Makefile
-sed -i 's/PKG_USE_MIPS16/PKG_BUILD_FLAGS:=no-mips16\nPKG_USE_MIPS16/' package/luci-app-passwall-packages/sing-box/Makefile
+# 添加 no-mips16 标志
+sed -i 's/^PKG_NAME:=sing-box/& \
+PKG_BUILD_FLAGS:=no-mips16/' package/luci-app-passwall-packages/sing-box/Makefile
+
+# 禁用 CGO
+sed -i 's/^GO_PKG_BUILD_VARS :=/GO_PKG_BUILD_VARS += CGO_ENABLED=0\n&/' package/luci-app-passwall-packages/sing-box/Makefile
