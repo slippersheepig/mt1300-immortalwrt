@@ -15,6 +15,12 @@
 
 # Add a feed source
 rm -rf feeds/luci/applications/luci-app-passwall/
+rm -rf feeds/packages/net/chinadns-ng/
+rm -rf feeds/packages/net/dns2socks/
+rm -rf feeds/packages/net/ipt2socks/
+rm -rf feeds/packages/net/microsocks/
+rm -rf feeds/packages/net/simple-obfs/
+rm -rf feeds/packages/net/tcping/
 rm -rf feeds/packages/net/xray-core/
 rm -rf feeds/packages/net/xray-plugin/
 git clone https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
